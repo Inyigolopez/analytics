@@ -16,6 +16,12 @@
   <url>http://maven.apache.org</url>
 
   <properties>
+  
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	
+	<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+	<build-date>${maven.build.timestamp}</build-date>
+	
     <java.version>1.8</java.version>
     <junit.version>4.11</junit.version>
     <spring.version>4.0.1.RELEASE</spring.version>
@@ -26,8 +32,6 @@
     <openlayers.version>2.13.1</openlayers.version>
     <angular-ui-bootstrap.version>0.10.0</angular-ui-bootstrap.version>
     <angular-file-upload.version>1.2.5</angular-file-upload.version>
-  
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <start-class>com.teralyx.App</start-class>
   </properties>
@@ -57,6 +61,7 @@
           <overwrite>false</overwrite>
         </configuration>
       </plugin>
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -89,12 +94,20 @@
           </execution>
         </executions>
       </plugin>
+
     </plugins>
     
     <resources>
       <resource>
         <directory>src/main/resources</directory>
       </resource>
+      <resource>
+		<directory>src/main/resources</directory>
+		<filtering>true</filtering>
+		<includes>
+		    <include>build.properties</include>
+		</includes>
+	  </resource>
       <resource>
         <directory>src/main/webapp</directory>
       </resource>
