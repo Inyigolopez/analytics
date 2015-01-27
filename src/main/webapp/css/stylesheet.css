@@ -96,3 +96,28 @@ table.track_table a {
 #chart-current-year {
     margin-bottom: 10px;
 }
+
+.gridStyles{
+    width:940px;
+    height: 300px;
+}
+
+.ngRow.even{
+    background: AliceBlue;
+}
+
+.ngRow.odd{
+    background: YellowGreen;
+}
+
+.modal-body input{
+    display:block;
+}
+
+.ng-valid{
+    border:thin solid #090;
+}
+
+.ng-invalid{
+    border: thin solid #990000;
+}

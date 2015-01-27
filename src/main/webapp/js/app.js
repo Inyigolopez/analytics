@@ -2,31 +2,19 @@
 
 /* App Module */
 
-Array.prototype.randomize = function() {
-    var i = this.length, j, temp;
-    if(i===0)
-	return this;
-    while (--i) {
-	j = Math.floor(Math.random() * (i - 1));
-	temp = this[i];
-	this[i] = this[j];
-	this[j] = temp;
-    }
-    return this;
-    
-};
 
-var analyticsApp = angular
-	.module('analyticsApp', [
-	    'ngRoute', 
-	    'angularFileUpload', 
-	    'ui.bootstrap', 
-	    'track-map-ng',
-	    'analyticsApp.filters',
-	    'analyticsApp.services',
-	    'analyticsApp.directives',
-	    'analyticsApp.controllers'	    
-	])
+angular.module('analyticsApp',[])
+	.controller('IndexCtrl' ['$scope', '$parse' function ($scope, $parse){
+		$scope.csv = {
+			content: null,
+			header: true,
+			separator: ',',
+			result: null
+		};
+	}])
+
+	
+
 	.directive('ngActiveTab', function($location) {
 	    return {
 		link: function postLink(scope, element, attrs) {
@@ -60,21 +48,17 @@ var analyticsApp = angular
 				templateUrl: '/partials/data.html',
 				controller: 'DataCtrl'
 			    }).
+			    when('/maps', {
+				templateUrl: '/partials/maps.html',
+				controller: 'MapsCtrl'
+			    }).
 			    otherwise({
 				redirectTo: '/'
 			    });
 		}
 	)
-	.filter('bytes', function() {
-	    return function(bytes, precision) {
-		if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
-		if (bytes === 0) return '0 bytes';
-		if (typeof precision === 'undefined') precision = 1;
-		var units = [' bytes', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB'],
-			number = Math.floor(Math.log(bytes) / Math.log(1024));
-		return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) +  '' + units[number];
-	    };
-	})
+	
 	.run(function($rootScope) {
 	    $rootScope.currentYear = new Date().getFullYear();
-	});    
+	});
+   

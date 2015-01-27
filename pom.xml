@@ -9,7 +9,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.0.0.RC4</version>
+    <version>1.0.0.RC3</version>
   </parent>
 
   <name>analytics</name>
@@ -27,11 +27,12 @@
     <spring.version>4.0.1.RELEASE</spring.version>
     <bootstrap.version>3.1.1</bootstrap.version>
     <jquery.version>1.11.0</jquery.version>
-    <angularjs.version>1.2.12</angularjs.version>
+    <angularjs.version>1.2.12</angularjs.version>    
     <highcharts.version>3.0.9</highcharts.version>
     <openlayers.version>2.13.1</openlayers.version>
     <angular-ui-bootstrap.version>0.10.0</angular-ui-bootstrap.version>
     <angular-file-upload.version>1.2.5</angular-file-upload.version>
+    <ng-grid.version>2.0.6</ng-grid.version>
 
     <start-class>com.teralyx.App</start-class>
   </properties>
@@ -182,6 +183,7 @@
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-aspects</artifactId>
 	</dependency>
+	
 	<dependency>
 	    <groupId>org.webjars</groupId>
 	    <artifactId>bootstrap</artifactId>
@@ -223,6 +225,7 @@
 	    <artifactId>angular-file-upload</artifactId>
 	    <version>${angular-file-upload.version}</version>
 	</dependency>
+	
 	<dependency>
 	    <groupId>org.webjars</groupId>
 	    <artifactId>highcharts</artifactId>
@@ -232,7 +235,8 @@
 	    <groupId>org.webjars</groupId>
 	    <artifactId>openlayers</artifactId>
 	    <version>${openlayers.version}</version>
-	</dependency>	
+	</dependency>
+		
 	<dependency>
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-jms</artifactId>

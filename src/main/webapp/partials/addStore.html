@@ -1,0 +1,15 @@
+<div class="modal-header">
+	<button type="button" class="close" ng-click="cancel()" data-dismiss="modal" aria-hidden="true">&times;</button>
+	<h1>Añadir tienda</h1>
+</div>
+
+<div class="modal-body">
+	<label>Nombre</label><input type="text" ng-model="nuevaTienda.nombre" />
+	<label>Ciudad</label><input type="text" ng-model="nuevaTienda.ciudad" />
+	<label>Longitud</label><input type="number" ng-model="nuevaTienda.longitud" />
+	<label>Latitud</label><input type="number" ng-model="nuevaTienda.latitud" />
+	<label>Teléfono</label><input type="number" ng-model="nuevaTienda.telf" />
+	</br>
+	<button class="btn btn-success" ng-click="salvarNuevaTienda()">Guardar Tienda</button>
+
+</div>
