@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <base href="/">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta content="Teralyx" name="Author" />
 	<title>analyticsApp.Teralyx</title>
 
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
 	
 <!--<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/${bootstrap.version}/css/bootstrap.min.css" />-->
 	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/3.1.1/css/bootstrap.min.css" />
-
 
 	<link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
 
@@ -18,7 +17,8 @@
     </head>
 
     <body ng-app="analyticsApp" role="document">
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	
+	<nav ng-controller="IndexCtrl" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 	    <div class="container">
 		<div class="navbar-header">
 		    
@@ -29,16 +29,19 @@
 			<span class="icon-bar"></span>
 		    </button>
 		    
-		    <a class="navbar-brand" href="/">Teralyx</a>
+		    <a class="navbar-brand" href="/">{{text}}</a>
 		</div>
 		<div class="navbar-collapse collapse">		      
 		    <ul class="nav navbar-nav">			
-				<li><a data-ng-active-tab data-ng-href="/#data">Data</a></li>			    
-				<li><a data-ng-active-tab data-ng-href="/#maps">Maps</a></li>
+				<li><a ng-active-tab ng-href="#/data">Data</a></li>			    
+				<li><a ng-active-tab ng-href="#/maps">Maps</a></li>
 		    </ul>		      
 		</div>
 	    </div>
 	</nav>
+	
+	<div ng-view=""></div>
+
 	<div class="container">
 	    
 	    <hr />
@@ -50,7 +53,7 @@
 	    </footer>
 	</div>
 
-<div ng-view=""></div>
+
 <!--
 	<script type="text/javascript" src="/webjars/jquery/${jquery.version}/jquery.min.js"></script>
 	<script type="text/javascript" src="/webjars/bootstrap/${bootstrap.version}/js/bootstrap.min.js"></script>
@@ -65,19 +68,19 @@
 	<script type="text/javascript" src="/webjars/highcharts/${highcharts.version}/highcharts-more.js"></script>
 	<script type="text/javascript" src="/webjars/openlayers/${openlayers.version}/OpenLayers.js"></script>
 -->	
-	<script type="text/javascript" src="/webjars/jquery/1.11.0/jquery.min.js"></script>
-	<script type="text/javascript" src="/webjars/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/webjars/angular-file-upload/1.2.5/angular-file-upload-html5-shim.min.js"></script>
-	<script type="text/javascript" src="/webjars/angularjs/1.2.12/angular.min.js"></script>
-	<script type="text/javascript" src="/webjars/angularjs/1.2.12/angular-route.min.js"></script>
-	<script type="text/javascript" src="/webjars/angularjs/1.2.12/angular-sanitize.min.js"></script>
-	<script type="text/javascript" src="/webjars/angular-file-upload/1.2.5/angular-file-upload.min.js"></script>
-	<script type="text/javascript" src="/webjars/angular-ui-bootstrap/0.10.0/ui-bootstrap.min.js"></script>
-	<script type="text/javascript" src="/webjars/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
-	<script type="text/javascript" src="/webjars/ng-grid/ng-grid/ng-grid-2.0.14.min.js"></script>
-	<script type="text/javascript" src="/webjars/highcharts/3.0.9/highcharts.js"></script>
-	<script type="text/javascript" src="/webjars/highcharts/3.0.9/highcharts-more.js"></script>
-	<script type="text/javascript" src="/webjars/openlayers/2.13.1/OpenLayers.js"></script>
+	<script type="text/javascript" src="/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="/lib/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/lib/angular-file-upload-html5-shim.min.js"></script>
+	<script type="text/javascript" src="/lib/angular.min.js"></script>
+	<script type="text/javascript" src="/lib/angular-route.min.js"></script>
+	<script type="text/javascript" src="/lib/angular-sanitize.min.js"></script>
+	<script type="text/javascript" src="/lib/angular-file-upload.min.js"></script>
+	<script type="text/javascript" src="/lib/ui-bootstrap.min.js"></script>
+	<script type="text/javascript" src="/lib/ui-bootstrap-tpls.min.js"></script>
+	<script type="text/javascript" src="/lib/ng-grid.min.js"></script>
+	<script type="text/javascript" src="/lib/highcharts.js"></script>
+	<script type="text/javascript" src="/lib/highcharts-more.js"></script>
+	<script type="text/javascript" src="/lib/OpenLayers.js"></script>
 	
 	<script type="text/javascript" src="http://www.openstreetmap.org/openlayers/OpenStreetMap.js"></script>
 				

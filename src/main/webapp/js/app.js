@@ -3,8 +3,15 @@
 /* App Module */
 
 
-angular.module('analyticsApp',[])
+angular
+	.module('analyticsApp', [
+	   'ngRoute',
+	   'analyticsApp.dataController',
+	   'analyticsApp.mapsController'
+	])
 	.controller('IndexCtrl' ['$scope', '$parse' function ($scope, $parse){
+		$scope.text = 'Hola';
+		
 		$scope.csv = {
 			content: null,
 			header: true,
@@ -41,15 +48,15 @@ angular.module('analyticsApp',[])
 
 		    $routeProvider.
 			    when('/', {
-				templateUrl: '/index.html',
+				templateUrl: 'index.html',
 				controller: 'IndexCtrl'
 			    }).
 			    when('/data', {
-				templateUrl: '/partials/data.html',
+				templateUrl: 'partials/data.html',
 				controller: 'DataCtrl'
 			    }).
 			    when('/maps', {
-				templateUrl: '/partials/maps.html',
+				templateUrl: 'partials/maps.html',
 				controller: 'MapsCtrl'
 			    }).
 			    otherwise({
