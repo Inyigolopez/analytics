@@ -1,5 +1,5 @@
 
-package com.teralyx.beans;
+package com.teralyx.analytics.beans;
 
 import java.math.BigDecimal;
 

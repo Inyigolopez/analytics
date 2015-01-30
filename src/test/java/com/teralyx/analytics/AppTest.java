@@ -1,4 +1,4 @@
-package com.teralyx;
+package com.teralyx.analytics;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

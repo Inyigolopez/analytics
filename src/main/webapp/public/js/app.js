@@ -9,15 +9,15 @@ angular
 	   'analyticsApp.dataController',
 	   'analyticsApp.mapsController'
 	])
-	.controller('IndexCtrl' ['$scope', '$parse' function ($scope, $parse){
-		$scope.text = 'Hola';
+	.controller('IndexCtrl', ['$scope', '$parse' function ($scope, $parse){
+		$scope.text = 'Hola',
 		
 		$scope.csv = {
 			content: null,
 			header: true,
 			separator: ',',
 			result: null
-		};
+		}
 	}])
 
 	

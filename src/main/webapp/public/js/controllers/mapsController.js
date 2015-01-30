@@ -2,7 +2,7 @@
 
 
 angular.module('analyticsApp.mapsController', [])
-	.controller('MapsCtrl',[$scope, 
+	.controller('MapsCtrl',[ $scope, 
 		function($scope){
 
 

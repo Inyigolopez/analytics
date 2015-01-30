@@ -2,10 +2,10 @@
 
 
 angular.module('analyticsApp.dataController', [])
-	.controller('DataCtrl', function ($scope, $http, %modal){
+	.controller('DataCtrl', function ($scope, $http, $modal){
 		$http.get('http://localhost:8080/tiendas.json').sucess(function(data){
 			$scope.tiendas = data;
-		})
+		}),
 
 		$scope.gridOptions = {
 			data: 'tiendas',
