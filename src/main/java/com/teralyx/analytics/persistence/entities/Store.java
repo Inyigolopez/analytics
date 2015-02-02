@@ -68,4 +68,5 @@ public class Store implements Serializable {
 		this.telephone = telephone;
 	}
 
+
 }

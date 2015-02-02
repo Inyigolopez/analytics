@@ -2,14 +2,13 @@
 
 /* App Module */
 
-
 angular
 	.module('analyticsApp', [
 	   'ngRoute',
 	   'analyticsApp.dataController',
 	   'analyticsApp.mapsController'
 	])
-	.controller('IndexCtrl', ['$scope', '$parse' function ($scope, $parse){
+	.controller('IndexCtrl', ['$scope', '$parse', function ($scope, $parse){
 		$scope.text = 'Hola',
 		
 		$scope.csv = {
